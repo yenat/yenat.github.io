@@ -124,6 +124,16 @@ footer{border-top:1px solid var(--line);padding-block:48px 56px}
 @media (max-width:540px){.grid3,.talks,.skills{grid-template-columns:minmax(0,1fr)}}
 @media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}.cells i{transition:none}}
 
+.statrow{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:32px;margin-bottom:36px}
+.statrow>div{min-width:0;padding-top:12px;border-top:2px solid var(--fg)}
+.statrow strong{display:block;font:400 clamp(2.6rem,5vw,3.6rem)/1.1 var(--display);font-variant-numeric:tabular-nums}
+.statrow p{margin:6px 0 0;font-size:.95rem;color:var(--muted)}
+.bars{display:grid;gap:14px}
+.bar{display:grid;grid-template-columns:minmax(0,12rem) minmax(0,1fr) 5.5rem;gap:16px;align-items:center;font-size:.95rem}
+.bar span:last-child{text-align:right;font-variant-numeric:tabular-nums;color:var(--muted)}
+.barl{height:10px;background:var(--panel)}
+.barl u{display:block;height:100%;background:var(--accent);border-radius:0 4px 4px 0}
+@media (max-width:640px){.statrow{grid-template-columns:minmax(0,1fr);gap:20px}.bar{grid-template-columns:minmax(0,1fr) auto;gap:4px 12px}.barl{grid-column:1/-1;grid-row:2}}
 .hero h1{font-size:clamp(2.2rem,4.1vw,3.2rem);line-height:1.08}
 .work img[src*=athena]{object-fit:contain;background:#fff}
 .talks img{object-fit:contain!important;object-position:center!important}
