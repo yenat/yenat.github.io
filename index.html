@@ -2,167 +2,27 @@
 <html lang="en">
 <head>
 <meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Yenatfanta Shifferaw</title>
-<meta name="description" content="AI researcher building systems where language models propose and a proof checker decides. 877 of 999 theorems machine-verified.">
+<meta name="description" content="Yenatfanta Shifferaw, AI researcher, data scientist and data engineer.">
 <meta name="author" content="Yenatfanta Shifferaw Bayleyegn">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@400;500;600&family=STIX+Two+Text:ital,wght@0,400;0,600;1,400;1,500&display=swap">
-<style>
-/* Layout: a mathematician's working page. The real theorem library is the hero, then evidence, then a to-scale career axis. */
-:root {
-  --bg:#F2F4F1; --panel:#E7EBE6; --fg:#14211F; --muted:#51605C; --line:#C6CEC8;
-  --accent:#2A3BC9; --llm:#B8770E; --open:#8E9B96;
-  --display:"STIX Two Text","STIX Two Math",Georgia,serif;
-  --body:"IBM Plex Sans",system-ui,-apple-system,"Segoe UI",sans-serif;
-  --mono:"IBM Plex Mono",ui-monospace,Menlo,Consolas,monospace;
-}
-@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){
-  --bg:#0F1716; --panel:#182322; --fg:#E7ECE6; --muted:#9FADA8; --line:#2E3C3A;
-  --accent:#9FAEFF; --llm:#E5B25A; --open:#65746F; color-scheme:dark}}
-:root[data-theme="dark"]{
-  --bg:#0F1716; --panel:#182322; --fg:#E7ECE6; --muted:#9FADA8; --line:#2E3C3A;
-  --accent:#9FAEFF; --llm:#E5B25A; --open:#65746F; color-scheme:dark}
-*{box-sizing:border-box}
-html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
-body{margin:0;background:var(--bg);color:var(--fg);font:400 1rem/1.6 var(--body)}
-a{color:inherit;text-decoration-color:var(--accent);text-underline-offset:3px}
-a:hover{color:var(--accent)}
-:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
-.wrap{max-width:1160px;margin-inline:auto;padding-block:0;padding-left:max(20px,env(safe-area-inset-left,0px));padding-right:max(20px,env(safe-area-inset-right,0px))}
-nav .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:6px 24px;padding-block:18px;font-size:.92rem}
-nav b{font:500 1.15rem var(--display)}
-nav ul{display:flex;flex-wrap:wrap;gap:4px 20px;list-style:none;margin:0;padding:0}
-nav a{text-decoration:none}
-h1,h2,h3{font-family:var(--display);font-weight:500;text-wrap:balance;margin:0}
-h1{font-size:clamp(2.7rem,6.4vw,5rem);line-height:1.02;font-style:italic;letter-spacing:-.012em}
-h2{font-size:clamp(1.9rem,3.6vw,2.7rem);line-height:1.1}
-h3{font-size:1.45rem;line-height:1.2}
-.label{font:500 .76rem var(--mono);letter-spacing:.07em;text-transform:uppercase;color:var(--muted)}
-.hero{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:56px;padding-block:44px 64px;align-items:center}
-.hero>*{min-width:0}
-.intro{display:grid;gap:20px}
-.intro p{margin:0;max-width:34rem;font-size:1.1rem}
-.btns{display:flex;flex-wrap:wrap;gap:10px}
-.btn{font:500 .92rem var(--body);padding:9px 15px;border:1px solid var(--fg);text-decoration:none;background:none;color:var(--fg);cursor:pointer}
-.btn.primary{background:var(--fg);color:var(--bg)}
-.btn:hover{border-color:var(--accent);color:var(--accent)}
-.btn.primary:hover{background:var(--accent);color:var(--bg)}
-figure{margin:0}
-figure img{display:block;width:100%;height:auto}
-.portrait figcaption{font:400 .74rem/1.4 var(--mono);color:var(--muted);margin-top:8px}
-.about{display:grid;grid-template-columns:minmax(0,4fr) minmax(0,7fr);gap:48px;align-items:center;margin-bottom:44px}
-.about>*{min-width:0}
-.about .copy{display:grid;gap:16px}
-.about p{margin:0}
-.skills{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:22px 32px}
-.skills p{margin:4px 0 0;font-size:.93rem}
-.talks{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:24px}
-.talks a{display:grid;gap:9px;align-content:start;text-decoration:none;font-size:.9rem;line-height:1.4}
-.talks img{display:block;width:100%;aspect-ratio:16/10;object-fit:cover;object-position:top;background:var(--panel);border:1px solid var(--line)}
-.work img{display:block;width:100%;aspect-ratio:16/10;object-fit:cover;margin-bottom:6px;background:var(--panel)}
-.work img.chart{object-fit:contain;background:#fff}
-.lib{display:grid;gap:14px}
-.tally{display:flex;align-items:baseline;flex-wrap:wrap;gap:4px 14px}
-.tally strong{font:400 clamp(2.6rem,5vw,3.6rem)/1 var(--display);font-variant-numeric:tabular-nums}
-.tools{display:flex;flex-wrap:wrap;gap:6px}
-.chip{display:inline-flex;align-items:center;gap:7px;font:500 .78rem var(--mono);padding:5px 9px;border:1px solid var(--line);background:none;color:var(--fg);cursor:pointer}
-.chip[aria-pressed="true"]{border-color:var(--fg);background:var(--panel)}
-.key{width:9px;height:9px;flex:none;background:var(--c,var(--fg))}
-.key.hollow{background:none;box-shadow:inset 0 0 0 1.5px var(--open)}
-.groups{display:grid;gap:9px}
-.group{display:grid;gap:3px}
-.group header{display:flex;justify-content:space-between;gap:10px;font:400 .74rem var(--mono);color:var(--muted)}
-.cells{display:grid;grid-template-columns:repeat(auto-fill,10px);gap:2px}
-.cells i{display:block;width:10px;height:10px;background:var(--accent);cursor:crosshair;transition:opacity .15s}
-.cells i.s2{background:var(--llm)}
-.cells i.s0{background:none;box-shadow:inset 0 0 0 1.5px var(--open)}
-.cells i.dim{opacity:.13}
-.cells i.off{opacity:.1}
-.cells i.on{outline:2px solid var(--fg);outline-offset:0}
-.read{min-height:3.7em;padding:9px 12px;background:var(--panel);font:400 .84rem/1.45 var(--mono);overflow-wrap:anywhere}
-.read b{font-weight:500}
-.read span{color:var(--muted);display:block}
-section.band{padding-block:64px;border-top:1px solid var(--line)}
-.head{display:grid;gap:8px;margin-bottom:32px;max-width:44rem}
-.head p{margin:0;color:var(--muted)}
-.feat{display:grid;grid-template-columns:minmax(0,5fr) minmax(0,7fr);gap:48px;margin-bottom:56px}
-.feat>*{min-width:0}
-.feat .copy{display:grid;gap:12px;align-content:start}
-.feat p{margin:0}
-.chartbox{position:relative}
-.chartbox svg{display:block;width:100%;height:auto;overflow:visible}
-.chartbox text{font:400 11px var(--mono);fill:var(--muted)}
-.chartbox text.val{fill:var(--fg);font-size:13px;font-weight:500}
-#tip{position:absolute;display:none;pointer-events:none;max-width:250px;padding:7px 10px;background:var(--fg);color:var(--bg);font:400 .76rem/1.4 var(--body);z-index:2}
-#tip b{font:500 .8rem var(--mono);display:block}
-.note{font-size:.84rem;color:var(--muted);margin:0}
-table{border-collapse:collapse;width:100%;font-size:.88rem;font-variant-numeric:tabular-nums}
-th{font:500 .72rem var(--mono);letter-spacing:.04em;text-transform:uppercase;color:var(--muted);text-align:right;padding:6px 10px;border-bottom:1px solid var(--fg);white-space:nowrap}
-td{padding:7px 10px;text-align:right;border-bottom:1px solid var(--line);white-space:nowrap}
-th:first-child,td:first-child{text-align:left;padding-left:0;white-space:normal}
-.scroll{overflow-x:auto}
-.grid3{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:36px 32px}
-.work{display:grid;gap:7px;align-content:start;padding-top:12px;border-top:2px solid var(--fg)}
-.work p{margin:0;font-size:.95rem}
-.work .tech{font:400 .75rem/1.5 var(--mono);color:var(--muted)}
-.axis{display:grid;gap:4px;margin-top:8px}
-.row{display:grid;grid-template-columns:minmax(0,5fr) minmax(0,6fr);gap:6px 28px;padding-block:13px;border-top:1px solid var(--line)}
-.row>*{min-width:0}
-.row h3{font:600 1rem/1.3 var(--body)}
-.row .meta{font-size:.88rem;color:var(--muted)}
-.row p{margin:4px 0 0;font-size:.9rem}
-.track{position:relative;height:14px;margin-top:7px;background:linear-gradient(var(--line),var(--line)) 0 50%/100% 1px no-repeat}
-.track u{position:absolute;top:2px;height:10px;background:var(--accent);border-radius:0 3px 3px 0;text-decoration:none}
-.years{position:relative;height:1.2em;font:400 .72rem var(--mono);color:var(--muted);margin-left:calc(45.45% + 14px)}
-.years span{position:absolute;top:0}
-.cols{display:grid;grid-template-columns:minmax(0,3fr) minmax(0,2fr);gap:48px}
-.cols>*{min-width:0}
-ul.plain{list-style:none;margin:12px 0 0;padding:0;display:grid;gap:10px}
-.small{font-size:.92rem}
-footer{border-top:1px solid var(--line);padding-block:48px 56px}
-.contact{display:grid;gap:14px}
-.mail{display:flex;flex-wrap:wrap;align-items:center;gap:10px;font:400 clamp(1.2rem,3.4vw,2rem) var(--display);overflow-wrap:anywhere}
-@media (max-width:860px){
-  .hero,.feat,.cols{grid-template-columns:minmax(0,1fr);gap:32px}
-  .grid3,.talks,.skills{grid-template-columns:repeat(2,minmax(0,1fr))}
-  .about{grid-template-columns:minmax(0,1fr);gap:24px}
-  .portrait{max-width:100%}
-  .row{grid-template-columns:minmax(0,1fr)}
-  .years{margin-left:0}
-}
-@media (max-width:540px){.grid3,.talks,.skills{grid-template-columns:minmax(0,1fr)}}
-@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}.cells i{transition:none}}
-</style>
+<link rel="stylesheet" href="style.css">
 </head>
 <body>
-
-
 <nav aria-label="Main"><div class="wrap">
-  <b>Yenatfanta Shifferaw</b>
-  <ul>
-    <li><a href="#about">About</a></li>
-    <li><a href="#proofs">Research</a></li>
-    <li><a href="#projects">Projects</a></li>
-    <li><a href="#career">Career</a></li>
-    <li><a href="#writing">Publications</a></li>
-    <li><a href="#contact">Contact</a></li>
-  </ul>
+  <b><a href="index.html">Yenatfanta Shifferaw</a></b>
+  <ul><li><a href="index.html" aria-current="page">Home</a></li><li><a href="about.html">About</a></li><li><a href="research.html">Research</a></li><li><a href="projects.html">Projects</a></li><li><a href="experience.html">Experience</a></li><li><a href="publications.html">Publications</a></li><li><a class="res" href="Yenatfanta-Shifferaw-Resume.pdf">Resume</a></li></ul>
 </div></nav>
-
 <main>
 <div class="wrap hero">
   <div class="intro">
     <span class="label">Data Scientist / Data Engineer / AI Researcher</span>
     <h1>Making AI prove its work.</h1>
     <p>I build AI systems that hold up when the stakes are real. Over 10 years that has meant perception for the humanoid robot Sophia, medical assistants, credit scoring and blockchain analytics. Today I work on automated theorem proving, where a language model can suggest anything and only a proof checker can say it is right.</p>
-    <a href="mailto:yenatshif@gmail.com">yenatshif@gmail.com</a>
-    <div class="btns">
-      <a class="btn primary" href="#proofs">See the work</a>
-      <a class="btn" href="https://drive.google.com/file/d/13FwTllw2dQEwGFcWxLdbpAm3QxKI6m-L/view?usp=sharing">Resume</a>
-      <a class="btn" href="https://github.com/yenat">GitHub</a>
-    </div>
+    <div class="btns"><a class="btn primary" href="research.html">See the research</a></div>
   </div>
 
   <figure class="portrait">
@@ -170,293 +30,20 @@ footer{border-top:1px solid var(--line);padding-block:48px 56px}
     <figcaption>African Conference of Women Engineers and Scientists, Kigali, 2024</figcaption>
   </figure>
 </div>
-
-<section class="band" id="about"><div class="wrap about">
-  <figure><img src="images/vr.jpg" alt="Yenatfanta wearing a VR headset at a conference" loading="lazy" width="1200" height="823"></figure>
-  <div class="copy">
-    <h2>Who is Yenatfanta?</h2>
-    <p>A seasoned Data Scientist with over a decade of experience in leveraging data to drive innovation and business growth. Skilled in crafting and implementing data-driven solutions, from data ingestion and cleaning to advanced modeling and deployment. Proficient in a wide range of data science tools and techniques, including Python, R, SQL, and machine learning frameworks like TensorFlow. Adept at building robust data pipelines, conducting in-depth data analysis, and creating insightful visualizations. Experienced in leveraging AWS to build scalable and cost-effective data solutions. Passionate about pushing the boundaries of AI and machine learning to drive positive impact.</p>
-    <div class="btns">
-      <a class="btn" href="http://www.linkedin.com/in/yenatfanta-shifferaw-64b0614b">LinkedIn</a>
-      <a class="btn" href="https://github.com/yenat">GitHub</a>
-      <a class="btn" href="https://scholar.google.com/citations?hl=en&user=lGdEZHIAAAAJ">Google Scholar</a>
-    </div>
-  </div>
+<div class="wrap teasers">
+  <a class="teaser" href="research.html"><span class="label">Research</span><h2>877 of 999 theorems, machine-checked</h2><p>Automated theorem proving and a verified translator between proof assistants.</p></a>
+  <a class="teaser" href="projects.html"><span class="label">Projects</span><h2>From Sophia to credit scoring</h2><p>AI for humanoid robots, medicine, blockchain and finance.</p></a>
+  <a class="teaser" href="publications.html"><span class="label">Publications</span><h2>Papers, talks and posters</h2><p>Bias-free machine learning, proof of stake, medical imaging.</p></a>
 </div>
-<div class="wrap skills">
-  <div><span class="label">Programming</span><p>Python, R, SQL, Bash</p></div>
-  <div><span class="label">AI and machine learning</span><p>Deep Learning, NLP, LLMs, Computer Vision, TensorFlow, RASA, AWS SageMaker</p></div>
-  <div><span class="label">Data engineering</span><p>ETL, BigQuery, PostgreSQL, dbt, Trino</p></div>
-  <div><span class="label">Cloud and DevOps</span><p>AWS, Docker, Kubernetes, Prometheus, Grafana</p></div>
-  <div><span class="label">Visualization</span><p>Power BI, Google Data Studio, QuickSight, R Shiny</p></div>
-  <div><span class="label">Software engineering</span><p>Git, REST APIs, PyTest, GoTest, CI/CD</p></div>
-</div></section>
-
-<section class="band" id="proofs"><div class="wrap">
-  <div class="head">
-    <span class="label">Current research</span>
-    <h2>Two systems, one rule: nothing counts until it is machine-checked.</h2>
-  </div>
-  <div class="lib" style="margin-bottom:56px" aria-label="Theorem library explorer">
-    <div class="tally">
-      <strong id="count">877</strong>
-      <span>of 999 theorems proved. Each square is one real theorem, and every coloured square passed Lean's kernel.</span>
-    </div>
-    <div class="tools" role="group" aria-label="Filter theorems">
-      <button class="chip" id="f-all" data-f="all" aria-pressed="true">All 999</button>
-      <button class="chip" id="f-1" data-f="1" aria-pressed="false"><span class="key" style="--c:var(--accent)"></span>Automated 665</button>
-      <button class="chip" id="f-2" data-f="2" aria-pressed="false"><span class="key" style="--c:var(--llm)"></span>LLM loop 212</button>
-      <button class="chip" id="f-0" data-f="0" aria-pressed="false"><span class="key hollow"></span>Open 122</button>
-      <button class="chip" id="replay">Replay check</button>
-    </div>
-    <div class="groups" id="groups"></div>
-    <div class="read" id="read" aria-live="polite"></div>
-  </div>
-
-  <div class="feat">
-    <div class="copy">
-      <h3>AI Mathematician</h3>
-      <p>A prover that combines search, the Vampire and Duper automated provers, Lean 4 and a language model that learns from Lean's error messages. It runs on a 999-theorem library of logic, set theory, arithmetic, ordinals and surreal numbers.</p>
-      <p>Each gain came from measuring why the last version failed. One test showed that 73% of LLM replies were empty. Another showed that only 7 of 257 goals had every lemma they needed in view, and fixing that one added 77 proofs.</p>
-      <p>All 877 proofs are stored as exact Lean scripts. One command re-checks them from scratch, each in a fresh process, and the guard rejects incomplete output or any axiom outside the allowed set. The latest result: 877 of 877.</p>
-      <a href="https://github.com/yenat/ai-mathematician">github.com/yenat/ai-mathematician</a>
-    </div>
-    <div>
-      <span class="label">Theorems proved, by version</span>
-      <div class="chartbox" id="chart"><div id="tip"></div></div>
-      <p class="note">v4+ adds results from earlier experiments. v8 stopped after 85 of 167 goals, once analysis showed missing lemmas were no longer the main cause of failure.</p>
-    </div>
-  </div>
-
-  <div class="feat">
-    <div class="copy">
-      <h3>Megalodon to Lean 4</h3>
-      <p>A translator that moves formal mathematics between two proof assistants, then proves the translation is faithful. The Lean output is read back out of Lean, rebuilt as Megalodon terms and hashed by Megalodon's own code.</p>
-      <p>A translation that is wrong in a self-consistent way still type-checks, so Lean alone cannot catch it. This round trip found three real bugs that Lean's kernel could not. As a negative control, all 5,030 deliberately perturbed terms got a different hash.</p>
-      <a href="https://github.com/yenat/megalodon-lean4">github.com/yenat/megalodon-lean4</a>
-    </div>
-    <div>
-      <span class="label">3,333 theorems, zero errors, zero sorry</span>
-      <div class="scroll"><table>
-        <thead><tr><th>Corpus</th><th>Theorems</th><th>Statements identical</th><th>Hashes matching</th></tr></thead>
-        <tbody>
-          <tr><td>100thms_12.mg</td><td>999</td><td>1,158 / 1,158</td><td>1,151 / 1,151</td></tr>
-          <tr><td>mgwiki Part1–Part14</td><td>1,401</td><td>1,600 / 1,600</td><td>1,593 / 1,593</td></tr>
-          <tr><td>mgwiki topology</td><td>933</td><td>2,347 / 2,347</td><td>2,340 / 2,340</td></tr>
-        </tbody>
-      </table></div>
-      <p class="note" style="margin-top:10px">Hashes identify statements and definition bodies. Proofs are compared structurally, and every proof in all three corpora matched.</p>
-    </div>
-  </div>
-
-</div></section>
-
-<section class="band" id="projects"><div class="wrap">
-  <div class="head">
-    <span class="label">Projects' highlight</span>
-    <h2>AI in places where mistakes cost something.</h2>
-  </div>
-  <div class="grid3">
-    <article class="work">
-      <img src="images/sophia.jpg" alt="Sophia, the humanoid robot, in profile" loading="lazy">
-      <h3>Sophia: Humanoid robot</h3>
-      <p>Engaged in Hanson Robotics projects, utilizing various Machine Learning and Deep Learning algorithms to advance humanoid robots. Performed image and video classification tasks with TensorFlow and Caffe, leveraging GPU acceleration. Implemented algorithms within the OpenCog framework, contributing to integrative multi-algorithm AI systems. Integrated sophisticated software into humanoid robots for seamless operation. Developed sound detection capabilities for humanoid robot named SOPHIA.</p>
-      <span class="tech">TensorFlow · Caffe · OpenCog · GPU acceleration</span>
-    </article>
-    <article class="work">
-      <img class="chart" src="images/ada-chart.jpg" alt="ADA price chart from 2019 to 2024" loading="lazy">
-      <h3>ADA value prediction and ADA metrics monitoring</h3>
-      <p>Utilized AWS SageMaker to analyze Cardano's blockchain, focusing on stake pool behavior and creating predictive models for Return on Stake. The results were visualized using AWS QuickSight. Built and maintained a comprehensive monitoring infrastructure using Prometheus and Grafana, ensuring optimal database and metric performance.</p>
-      <span class="tech">SageMaker · QuickSight · Prometheus · Grafana</span>
-    </article>
-    <article class="work">
-      <img src="images/talk-athena.jpg" alt="Title slide: Athena, conversational agent and chatbot" loading="lazy">
-      <h3>Rosie/Athena AI assistants</h3>
-      <p>Developed Athena and ROSIE, voice-activated chatbots and Qbo toy robots. Athena/Rosie are capable of providing recommendations and directions to tourists and hotel guests, whereas the Qbo toy robot is able to teach students basic mathematics, play puzzles and carry out day to day conversations.</p>
-      <span class="tech"><a href="https://drive.google.com/file/d/1olyt-6ux3urG22nLg4VdrkcwLJQ6rzk9/view?usp=sharing">Watch the Rosie chatbot demo</a></span>
-    </article>
-    <article class="work">
-      <h3>Signix ChatGPT</h3>
-      <p>Developed a sophisticated ChatGPT-based system on Azure specifically designed to provide comprehensive and accurate answers to medical inquiries. The system was carefully engineered to adhere to strict privacy and confidentiality standards, ensuring the protection of sensitive patient data.</p>
-      <span class="tech">Azure · ChatGPT</span>
-    </article>
-    <article class="work">
-      <h3>Credit scoring for emerging markets</h3>
-      <p>ML-powered credit scoring models at EthSwitch built on financial, social media and psychometric data, adapted to regulatory and privacy requirements.</p>
-      <span class="tech"><a href="https://github.com/yenat/Interoperable-creditscore">Interoperable score</a> · <a href="https://github.com/yenat/psychometric-score">Psychometric score</a></span>
-    </article>
-    <article class="work">
-      <h3>Bias-free machine learning</h3>
-      <p>The Parent-Child Framework, a biologically inspired model for bias-free machine learning.</p>
-      <span class="tech"><a href="https://link.springer.com/chapter/10.1007/978-3-031-96033-8_55">Read the paper</a></span>
-    </article>
-  </div>
-</div></section>
-
-<section class="band" id="career"><div class="wrap">
-  <div class="head">
-    <span class="label">Career, 2014 to today</span>
-    <h2>From robots to proofs.</h2>
-  </div>
-  <div class="years" aria-hidden="true"><span style="left:0">2014</span><span style="left:30.77%">2018</span><span style="left:61.54%">2022</span><span style="left:92.31%">2026</span></div>
-  <div class="axis" id="axis"></div>
-</div></section>
-
-<section class="band" id="talks"><div class="wrap">
-  <div class="head"><span class="label">Talks and posters</span><h2>Presented work.</h2></div>
-  <div class="talks">
-    <a href="https://docs.google.com/presentation/d/1RcJ5SSG4tIfQLPDXSLxGcP_MQ9EuTCmkHX_D-51XxZ8/present"><img src="images/talk-smart-contracts.jpg" alt="" loading="lazy"><span>Validation on Metrics for State Machine Performance in Account-Based and EUTxO-Based Smart Contracts</span></a>
-    <a href="https://docs.google.com/presentation/d/18WutxScNdNaz0rzwSnbtvSHWLY2FxG1YHB6snhI683E/present"><img src="images/talk-pos.jpg" alt="" loading="lazy"><span>Limitations of Proof of Stake Algorithm in Blockchain</span></a>
-    <a href="https://docs.google.com/presentation/d/19wuZ42etTIiXgigi95lBpdJmBFEqC67s/present"><img src="images/poster-kidney.jpg" alt="" loading="lazy"><span>A Two-Phase CNN Model for Accurate Kidney Abnormality Detection and Staging, ACWES poster</span></a>
-    <a href="https://docs.google.com/presentation/d/1M9tcntzkKeBtvAIvUXkibtaQYFf572YcxLTP5HTGKf4/present"><img src="images/talk-athena.jpg" alt="" loading="lazy"><span>Athena: conversational agent and chatbot</span></a>
-  </div>
-</div></section>
-
-<section class="band" id="writing"><div class="wrap cols">
-  <div>
-    <span class="label">Publications</span>
-    <ul class="plain">
-      <li><a href="https://link.springer.com/chapter/10.1007/978-3-031-96033-8_55">The Parent-Child Framework: Biologically Inspired Bias-Free Machine Learning Model</a></li>
-      <li><a href="https://www.ajol.info/index.php/zj/article/view/216947">Limitations of Proof of Stake Algorithm in Blockchain: A Review</a></li>
-      <li><a href="https://www.researchgate.net/publication/312803718_Hybrid_Intelligent_System_for_Lung_Cancer_Type_Identification">Hybrid Intelligent System for Lung Cancer Type Identification</a></li>
-    </ul>
-    <p style="margin-top:14px"><a href="https://scholar.google.com/citations?hl=en&user=lGdEZHIAAAAJ">All work on Google Scholar</a></p>
-  </div>
-  <div class="small">
-    <span class="label">Education</span>
-    <ul class="plain">
-      <li><b>M.Sc. Computer Engineering</b><br>Addis Ababa Institute of Technology, Addis Ababa University, 2011</li>
-      <li><b>B.Sc. Electrical Engineering</b><br>Jimma University, 2007</li>
-    </ul>
-    <div style="margin-top:32px"><span class="label">Community</span>
-    <ul class="plain">
-      <li>Ambassador, Women in Data Science (WiDS) Ethiopia</li>
-      <li>Poster judge, Deep Learning Indaba</li>
-      <li>Team advisor, women-focused AI hackathon</li>
-      <li>Grants and scholarships from CVPR, ICCV, WiML, Black in AI, NeurIPS and Deep Learning Indaba</li>
-      <li>Volunteer tutoring girls in STEM</li>
-      <li>Volunteer supporting vulnerable mothers and children with food and clothes</li>
-      <li>Volunteer reading companion for elderly community members</li>
-    </ul></div>
-    <div style="margin-top:32px"><span class="label">Professional competencies</span>
-    <ul class="plain">
-      <li>Project management and agile delivery</li>
-      <li>Cross-functional collaboration and stakeholder communication</li>
-      <li>Mentorship, coaching and technical knowledge sharing</li>
-      <li>Jira, Confluence, Microsoft Teams, Slack</li>
-    </ul></div>
-    <div style="margin-top:32px"><span class="label">Certifications</span>
-    <p style="margin:12px 0 0">AWS Certified Cloud Practitioner, Kubernetes, DevOps Fundamentals, Prompt Engineering, Database Systems, Leadership Development</p></div>
-  </div>
-</div></section>
 </main>
-
-<footer id="contact"><div class="wrap contact">
-  <span class="label">Contact</span>
-  <h2>Have a hard problem that needs a provable answer?</h2>
-  <div class="mail"><a href="mailto:yenatshif@gmail.com" id="addr">yenatshif@gmail.com</a><button class="chip" id="copy">Copy</button></div>
-  <div class="btns">
-    <a class="btn" href="http://www.linkedin.com/in/yenatfanta-shifferaw-64b0614b">LinkedIn</a>
-    <a class="btn" href="https://github.com/yenat">GitHub</a>
-    <a class="btn" href="https://scholar.google.com/citations?hl=en&user=lGdEZHIAAAAJ">Google Scholar</a>
-  </div>
+<footer class="foot"><div class="wrap">
+  <span>yenatshif@gmail.com</span>
+  <ul>
+    <li><a href="http://www.linkedin.com/in/yenatfanta-shifferaw-64b0614b">LinkedIn</a></li>
+    <li><a href="https://github.com/yenat">GitHub</a></li>
+    <li><a href="https://scholar.google.com/citations?hl=en&amp;user=lGdEZHIAAAAJ">Google Scholar</a></li>
+  </ul>
 </div></footer>
 
-<script>
-const D={"names":["andI","orIL","orIR","iffI","pred_ext","FalseE","andEL","andER","and3I","and3E","or3I1","or3I2","or3I3","or3E","and4I","and5I","and6I","and7I","not_or_and_demorgan","not_ex_all_demorgan_i","iffEL","iffER","iff_refl","iff_sym","iff_trans","eq_i_tra","neq_i_sym","prop_ext_2","dneg","not_all_ex_demorgan_i","eq_or_nand","exactly1of2_I1","exactly1of2_I2","exactly1of2_E","exactly1of2_or","exandE_i","exandE_ii","exandE_iii","exandE_iiii","EmptyE","PowerI","Subq_Empty","Empty_In_Power","xm","Eps_i_ex","Subq_ref","Subq_tra","Empty_Subq_eq","Empty_eq","UnionI","UnionE","UnionE_impred","PowerE","Self_In_Power","ReplI","ReplE","ReplE_impred","ReplE'","Repl_Empty","ReplEq_ext_sub","ReplEq_ext","Repl_inv_eq","Repl_invol_eq","If_i_correct","If_i_0","If_i_1","If_i_or","UPairE","UPairI1","UPairI2","SingI","SingE","binunionI1","binunionI2","binunionE","binunionE'","binunion_asso","binunion_com_Subq","binunion_com","binunion_idl","binunion_idr","binunion_Subq_1","binunion_Subq_2","binunion_Subq_min","Subq_binunion_eq","famunionI","famunionE","famunionE_impred","famunion_Empty","famunion_Subq","famunion_ext","SepI","SepE","SepE1","SepE2","Sep_Empty","Sep_Subq","Sep_In_Power","ReplSepI","ReplSepE","ReplSepE_impred","binintersectI","binintersectE","binintersectE1","binintersectE2","binintersect_Subq_1","binintersect_Subq_2","binintersect_Subq_eq_1","binintersect_Subq_max","binintersect_com_Subq","binintersect_com","setminusI","setminusE","setminusE1","setminusE2","setminus_Subq","setminus_In_Power","binunion_remove1_eq","In_irref","In_no2cycle","form100_63_surjCantor","form100_63_injCantor","injI","inj_comp","bijI","bijE","bij_inj","bij_id","bij_comp","bij_surj","surj_rinv","inj_linv","bij_inv","atleastp_tra","Subq_atleastp","equip_atleastp","equip_ref","equip_sym","equip_tra","equip_0_Empty","KnasterTarski_set","image_In_Power","image_monotone","setminus_antimonotone","SchroederBernstein","atleastp_antisym_equip","Descr_ii_prop","Descr_iii_prop","Descr_Vo1_prop","If_ii_1","If_ii_0","If_iii_1","If_iii_0","In_rec_i_G_c","In_rec_i_G_inv","In_rec_i_G_f","In_rec_i_G_In_rec_i","In_rec_i_G_In_rec_i_d","In_rec_i_eq","In_rec_G_ii_c","In_rec_G_ii_inv","In_rec_G_ii_f","In_rec_G_ii_In_rec_ii","In_rec_G_ii_In_rec_ii_d","In_rec_ii_eq","In_rec_G_iii_c","In_rec_G_iii_inv","In_rec_G_iii_f","In_rec_G_iii_In_rec_iii","In_rec_G_iii_In_rec_iii_d","In_rec_iii_eq","Power_0_Sing_0","binunion_finite","Subq_finite","infinite_remove1","Inj1_eq","Inj1I1","Inj1I2","Inj1E","Inj1NE1","Inj1NE2","Inj0I","Inj0E","Unj_eq","Unj_Inj1_eq","Inj1_inj","Unj_Inj0_eq","Inj0_inj","Inj0_0","Inj0_Inj1_neq","Inj0_setsum","Inj1_setsum","setsum_Inj_inv","Inj0_setsum_0L","Inj0_pair_0_eq","pairI0","proj0I","proj0E","proj0_pair_eq","proj1_pair_eq","Sigma_eta_proj0_proj1","proj0_Sigma","proj1_Sigma","pair_Sigma","pair_Sigma_E1","Sigma_E","lamI","lamE","apI","apE","beta","proj0_ap_0","pair_ap_0","ap0_Sigma","lam_Pi","ap_Pi","DescrR_i_io_12","Repl_finite","ordsuccI1","ordsuccI2","ordsuccE","neq_0_ordsucc","neq_ordsucc_0","ordsucc_inj","In_0_1","In_0_2","In_1_2","nat_0","nat_ordsucc","nat_1","nat_2","nat_0_in_ordsucc","nat_ordsucc_in_ordsucc","nat_ind","nat_complete_ind","nat_inv_impred","nat_inv","nat_p_trans","nat_trans","nat_ordsucc_trans","equip_adjoin_ordsucc","equip_ordsucc_remove1","PigeonHole_nat","Pigeonhole_not_atleastp_ordsucc","Union_ordsucc_eq","cases_1","cases_2","neq_0_1","neq_1_0","neq_0_2","neq_2_0","equip_Sing_1","nat_primrec_r","nat_primrec_0","nat_primrec_S","add_nat_0R","add_nat_SR","add_nat_p","add_nat_1_1_2","add_nat_asso","add_nat_0L","add_nat_SL","add_nat_com","add_nat_In_L","add_nat_Subq_L","add_nat_Subq_R'","add_nat_cancel_R","mul_nat_0R","mul_nat_SR","mul_nat_1R","mul_nat_p","mul_nat_0L","mul_nat_SL","mul_nat_com","mul_add_nat_distrL","mul_nat_asso","mul_nat_Subq_R","mul_nat_Subq_L","mul_nat_0_inv","mul_nat_0m_1n_In","nat_le1_cases","Pi_nat_0","Pi_nat_S","Pi_nat_p","Pi_nat_0_inv","exp_nat_0","exp_nat_S","exp_nat_p","exp_nat_1","Subq_Sing0_1","Subq_1_Sing0","eq_1_Sing0","omega_nat_p","nat_p_omega","omega_ordsucc","form100_22_v2","form100_22_v3","form100_22_v1","nat_finite","finite_ind","finite_Empty","Sing_finite","adjoin_finite","famunion_nat_finite","divides_nat_ref","divides_nat_tra","divides_nat_mulR","divides_nat_mulL","Pi_nat_divides","prime_nat_divisor_ex","atleastp_omega_infinite","infinite_Finite_Subq_ex","Inj1_setsum_1L","Inj1_pair_1_eq","pairI1","pairE","pairE0","pairE1","proj1I","proj1E","proj1_ap_1","pair_ap_1","ap1_Sigma","pair_p_I","Subq_2_UPair01","tuple_pair","PiI","pair_tuple_fun","tuple_2_0_eq","tuple_2_1_eq","ReplEq_setprod_ext","lamI2","tuple_2_Sigma","tuple_2_setprod","nat_le2_cases","prime_nat_2_lem","prime_nat_2","ordinal_TransSet","ordinal_Empty","ordinal_Hered","TransSet_ordsucc","ordinal_ordsucc","nat_p_ordinal","ordinal_1","ordinal_2","TransSet_ordsucc_In_Subq","ordinal_ordsucc_In_Subq","ordinal_trichotomy_or","ordinal_trichotomy_or_impred","ordinal_In_Or_Subq","ordinal_linear","ordinal_ordsucc_In_eq","ordinal_lim_or_succ","ordinal_ordsucc_In","ordinal_famunion","ordinal_binintersect","ordinal_binunion","ordinal_ind","least_ordinal_ex","TransSet_In_ordsucc_Subq","add_nat_In_R","add_nat_Subq_R","nat_Subq_add_ex","mul_nat_0_or_Subq","equip_finite_Power","ZF_closed_E","ZF_Union_closed","ZF_Power_closed","ZF_Repl_closed","ZF_UPair_closed","ZF_Sing_closed","ZF_binunion_closed","ZF_ordsucc_closed","nat_p_UnivOf_Empty","omega_TransSet","omega_ordinal","ordsucc_omega_ordinal","prime_nat_or_composite_nat","nat_1In_not_divides_ordsucc","form100_11_infinite_primes","infiniteRamsey_lem","infiniteRamsey","not_TransSet_Sing1","not_ordinal_Sing1","tagged_not_ordinal","tagged_notin_ordinal","tagged_eqE_Subq","tagged_eqE_eq","tagged_ReplE","ordinal_notin_tagged_Repl","quotient_remainder_nat","ordinal_0_In_ordsucc","infinite_bigger","PNoEq_ref_","PNoEq_sym_","PNoEq_tra_","PNoEq_antimon_","PNoLt_E_","PNoLt_irref_","PNoLt_mon_","PNoLt_trichotomy_or_","PNoLtI1","PNoLtI2","PNoLtI3","PNoLtE","PNoLt_irref","PNoLt_trichotomy_or","PNoLtEq_tra","PNoEqLt_tra","PNoLt_tra","PNoLeI1","PNoLeI2","PNoLe_ref","PNoLe_antisym","PNoLtLe_tra","PNoLeLt_tra","PNoEqLe_tra","PNoLe_tra","PNoLe_downc","PNo_downc_ref","PNo_upc_ref","PNoLe_upc","PNoLt_pwise_downc_upc","PNoEq_rel_strict_upperbd","PNo_rel_strict_upperbd_antimon","PNoEq_rel_strict_lowerbd","PNo_rel_strict_lowerbd_antimon","PNoEq_rel_strict_imv","PNo_rel_strict_imv_antimon","PNo_extend0_eq","PNo_extend1_eq","PNo_rel_imv_ex","PNo_lenbdd_strict_imv_extend0","PNo_lenbdd_strict_imv_extend1","PNo_lenbdd_strict_imv_split","PNo_rel_imv_bdd_ex","PNoEq_strict_upperbd","PNoEq_strict_lowerbd","PNoEq_strict_imv","PNo_strict_upperbd_imp_rel_strict_upperbd","PNo_strict_lowerbd_imp_rel_strict_lowerbd","PNo_strict_imv_imp_rel_strict_imv","PNo_rel_split_imv_imp_strict_imv","PNo_lenbdd_strict_imv_ex","PNo_strict_imv_pred_eq","PNo_lenbdd_least_rep2_exuniq2","PNo_bd_pred_lem","PNo_bd_pred","PNo_bd_In","SNoElts_mon","PNoEq_PSNo","SNo_PSNo","SNo_PSNo_eta_","SNo_SNo","SNoLev_uniq_Subq","SNoLev_uniq","SNoLev_prop","SNoLev_ordinal","SNoLev_","SNo_PSNo_eta","SNoLev_PSNo","SNo_Subq","SNoEq_I","SNo_eq","SNoLtLe","SNoLeE","SNoEq_sym_","SNoEq_tra_","SNoLtE","SNoLtI2","SNoLtI3","SNoLt_irref","SNoLt_trichotomy_or","SNoLt_trichotomy_or_impred","SNoLt_tra","SNoLe_ref","SNoLe_antisym","SNoLtLe_tra","SNoLeLt_tra","SNoLe_tra","SNoLtLe_or","SNoLt_PSNo_PNoLt","PNoLt_SNoLt_PSNo","SNoCutP_SNoCut","SNoCutP_SNoCut_impred","SNoCutP_L_0","SNoCutP_0_0","SNoS_E","SNoS_I","SNoS_I2","SNoS_Subq","SNoLev_uniq2","SNoS_E2","SNoS_In_neq","SNoS_SNoLev","SNoCutP_SNoL_SNoR","SNoL_E","SNoR_E","SNoL_SNoS_","SNoR_SNoS_","SNoL_SNoS","SNoR_SNoS","SNoL_I","SNoR_I","SNo_eta","SNoCutP_SNo_SNoCut","SNoCutP_SNoCut_L","SNoCutP_SNoCut_R","SNoCutP_SNoCut_fst","SNoCut_Le","SNoCut_ext","SNoLt_SNoL_or_SNoR_impred","SNoL_or_SNoR_impred","SNoL_SNoCutP_ex","SNoR_SNoCutP_ex","ordinal_SNo_","ordinal_SNo","ordinal_SNoLev","ordinal_SNoLev_max","ordinal_SNoL","ordinal_SNoR","nat_p_SNo","omega_SNo","omega_SNoS_omega","ordinal_In_SNoLt","ordinal_SNoLev_max_2","ordinal_Subq_SNoLe","ordinal_SNoLt_In","omega_nonneg","SNo_0","SNo_1","SNo_2","SNoLev_0","SNoCut_0_0","SNoL_0","SNoR_0","SNoL_1","SNoR_1","SNo_max_SNoLev","SNo_max_ordinal","pos_low_eq_one","SNo_extend0_SNo_","SNo_extend1_SNo_","SNo_extend0_SNo","SNo_extend1_SNo","SNo_extend0_SNoLev","SNo_extend1_SNoLev","SNo_extend0_nIn","SNo_extend1_In","SNo_extend0_SNoEq","SNo_extend1_SNoEq","SNoLev_0_eq_0","eps_ordinal_In_eq_0","eps_0_1","SNo__eps_","SNo_eps_","SNo_eps_1","SNoLev_eps_","SNo_eps_SNoS_omega","SNo_eps_decr","SNo_eps_pos","SNo_pos_eps_Lt","SNo_pos_eps_Le","eps_SNo_eq","eps_SNoCutP","eps_SNoCut","SNo_etaE","SNo_ind","SNo_rec_i_eq","SNo_rec_ii_eq","SNo_rec2_G_prop","SNo_rec2_eq_1","SNo_rec2_eq","SNo_ordinal_ind","SNo_ordinal_ind2","SNo_ordinal_ind3","SNoLev_ind","SNoLev_ind2","SNoLev_ind3","SNo_omega","SNoLt_0_1","SNoLt_0_2","SNoLt_1_2","restr_SNo_","restr_SNo","restr_SNoLev","restr_SNoEq","SNo_extend0_restr_eq","SNo_extend1_restr_eq","minus_SNo_eq","minus_SNo_prop1","SNo_minus_SNo","minus_SNo_Lt_contra","minus_SNo_Le_contra","minus_SNo_SNoCutP","minus_SNo_SNoCutP_gen","minus_SNo_Lev_lem1","minus_SNo_Lev_lem2","minus_SNo_invol","minus_SNo_Lev","minus_SNo_SNo_","minus_SNo_SNoS_","minus_SNoCut_eq_lem","minus_SNoCut_eq","minus_SNo_Lt_contra1","minus_SNo_Lt_contra2","mordinal_SNoLev_min_2","minus_SNo_SNoS_omega","SNoL_minus_SNoR","add_SNo_eq","add_SNo_prop1","SNo_add_SNo","SNo_add_SNo_3","SNo_add_SNo_3c","SNo_add_SNo_4","add_SNo_Lt1","add_SNo_Le1","add_SNo_Lt2","add_SNo_Le2","add_SNo_Lt3a","add_SNo_Lt3b","add_SNo_Lt3","add_SNo_Le3","add_SNo_SNoCutP","add_SNo_com","add_SNo_0L","add_SNo_0R","add_SNo_minus_SNo_linv","add_SNo_minus_SNo_rinv","add_SNo_ordinal_SNoCutP","add_SNo_ordinal_eq","add_SNo_ordinal_ordinal","add_SNo_ordinal_SL","add_SNo_ordinal_SR","add_SNo_ordinal_InL","add_SNo_ordinal_InR","add_nat_add_SNo","add_SNo_In_omega","add_SNo_1_1_2","add_SNo_SNoL_interpolate","add_SNo_SNoR_interpolate","add_SNo_assoc","add_SNo_minus_R2","add_SNo_minus_R2'","add_SNo_minus_L2","add_SNo_minus_L2'","add_SNo_cancel_L","add_SNo_cancel_R","minus_SNo_0","minus_add_SNo_distr","minus_add_SNo_distr_3","add_SNo_Lev_bd","add_SNo_SNoS_omega","add_SNo_Lt1_cancel","add_SNo_Lt2_cancel","add_SNo_Le1_cancel","add_SNo_assoc_4","add_SNo_com_3_0_1","add_SNo_com_3b_1_2","add_SNo_com_4_inner_mid","add_SNo_rotate_3_1","add_SNo_rotate_4_1","add_SNo_rotate_5_1","add_SNo_rotate_5_2","add_SNo_minus_SNo_prop2","add_SNo_minus_SNo_prop3","add_SNo_minus_SNo_prop5","add_SNo_minus_Lt1","add_SNo_minus_Lt2","add_SNo_minus_Lt1b","add_SNo_minus_Lt2b","add_SNo_minus_Lt1b3","add_SNo_minus_Lt2b3","add_SNo_minus_Lt_lem","add_SNo_minus_Le2","add_SNo_minus_Le2b","add_SNo_Lt_subprop2","add_SNo_Lt_subprop3a","add_SNo_Lt_subprop3b","add_SNo_Lt_subprop3c","add_SNo_Lt_subprop3d","ordinal_ordsucc_SNo_eq","add_SNo_3a_2b","add_SNo_1_ordsucc","add_SNo_eps_Lt","add_SNo_eps_Lt'","SNoLt_minus_pos","add_SNo_omega_In_cases","add_SNo_Lt4","add_SNo_3_3_3_Lt1","add_SNo_3_2_3_Lt1","add_SNo_minus_Lt12b3","add_SNo_minus_Le1b","add_SNo_minus_Le1b3","add_SNo_minus_Le12b3","nonneg_abs_SNo","not_nonneg_abs_SNo","pos_abs_SNo","neg_abs_SNo","SNo_abs_SNo","abs_SNo_minus","abs_SNo_dist_swap","mul_SNo_eq","mul_SNo_eq_2","mul_SNo_prop_1","SNo_mul_SNo","SNo_mul_SNo_lem","SNo_mul_SNo_3","mul_SNo_eq_3","mul_SNo_Lt","mul_SNo_Le","mul_SNo_SNoL_interpolate","mul_SNo_SNoL_interpolate_impred","mul_SNo_SNoR_interpolate","mul_SNo_SNoR_interpolate_impred","mul_SNo_Subq_lem","mul_SNo_zeroR","mul_SNo_oneR","mul_SNo_com","mul_SNo_minus_distrL","mul_SNo_minus_distrR","mul_SNo_distrR","mul_SNo_distrL","mul_SNo_assoc_lem1","mul_SNo_assoc_lem2","mul_SNo_assoc","mul_nat_mul_SNo","mul_SNo_In_omega","mul_SNo_zeroL","mul_SNo_oneL","mul_SNo_rotate_3_1","pos_mul_SNo_Lt","nonneg_mul_SNo_Le","neg_mul_SNo_Lt","pos_mul_SNo_Lt'","mul_SNo_Lt1_pos_Lt","nonneg_mul_SNo_Le'","mul_SNo_Le1_nonneg_Le","pos_mul_SNo_Lt2","nonneg_mul_SNo_Le2","mul_SNo_pos_pos","mul_SNo_pos_neg","mul_SNo_neg_pos","mul_SNo_neg_neg","mul_SNo_nonneg_nonneg","mul_SNo_nonpos_pos","mul_SNo_nonpos_neg","nonpos_mul_SNo_Le","SNo_zero_or_sqr_pos","SNo_pos_sqr_uniq","SNo_nonneg_sqr_uniq","SNo_foil","mul_SNo_minus_minus","mul_SNo_com_3_0_1","mul_SNo_com_3b_1_2","mul_SNo_com_4_inner_mid","SNo_foil_mm","mul_SNo_nonzero_cancel","mul_SNoCutP_lem","mul_SNoCut_abs","mul_SNo_SNoCut_SNoL_interpolate","mul_SNo_SNoCut_SNoL_interpolate_impred","mul_SNo_SNoCut_SNoR_interpolate","mul_SNo_SNoCut_SNoR_interpolate_impred","nonpos_nonneg_0","mul_minus_SNo_distrR","int_SNo_cases","int_3_cases","int_SNo","Subq_omega_int","int_minus_SNo_omega","int_add_SNo_lem","int_add_SNo","int_minus_SNo","int_mul_SNo","nonneg_int_nat_p","mul_SNo_nonpos_nonneg","ordinal_ordsucc_pos","quotient_remainder_int","divides_int_ref","divides_int_0","divides_int_add_SNo","divides_int_mul_SNo","divides_nat_divides_int","divides_int_divides_nat","divides_int_minus_SNo","divides_int_mul_SNo_L","divides_int_mul_SNo_R","divides_int_1","divides_int_pos_Le","gcd_reln_uniq","int_lin_comb_I","int_lin_comb_E","int_lin_comb_E1","int_lin_comb_E2","int_lin_comb_E3","int_lin_comb_E4","least_pos_int_lin_comb_ex","int_lin_comb_sym","least_pos_int_lin_comb_divides_int","least_pos_int_lin_comb_gcd","BezoutThm","gcd_id","gcd_0","gcd_sym","gcd_minus","euclidean_algorithm_prop_1","euclidean_algorithm","Euclid_lemma","prime_not_divides_int_1","Pi_SNo_0","Pi_SNo_S","Pi_SNo_In_omega","Pi_SNo_In_int","divides_int_prime_nat_eq","Euclid_lemma_Pi_SNo","divides_nat_mul_SNo_R","divides_nat_mul_SNo_L","Pi_SNo_divides","Pi_SNo_eq","prime_factorization_ex_uniq","exp_SNo_nat_0","exp_SNo_nat_S","exp_SNo_nat_1","SNo_exp_SNo_nat","nat_exp_SNo_nat","eps_ordsucc_half_add","eps_1_half_eq1","eps_1_half_eq2","double_eps_1","exp_SNo_1_bd","exp_SNo_2_bd","mul_SNo_eps_power_2","eps_bd_1","mul_SNo_eps_power_2'","exp_SNo_nat_mul_add","exp_SNo_nat_mul_add'","exp_SNo_nat_pos","mul_SNo_eps_eps_add_SNo","SNoS_omega_Lev_equip","SNoS_finite","SNoS_omega_SNoL_finite","SNoS_omega_SNoR_finite","minus_SNo_max_min","minus_SNo_max_min'","minus_SNo_min_max","double_SNo_max_1","double_SNo_min_1","finite_max_exists","finite_min_exists","SNoS_omega_SNoL_max_exists","SNoS_omega_SNoR_min_exists","nonneg_diadic_rational_p_SNoS_omega","diadic_rational_p_SNoS_omega","int_diadic_rational_p","omega_diadic_rational_p","eps_diadic_rational_p","minus_SNo_diadic_rational_p","mul_SNo_diadic_rational_p","add_SNo_diadic_rational_p","SNoS_omega_diadic_rational_p_lem","SNoS_omega_diadic_rational_p","mul_SNo_SNoS_omega","SNo_recip_pos_pos","SNo_recip_lem1","SNo_recip_lem2","SNo_recip_lem3","SNo_recip_lem4","SNo_recipauxset_I","SNo_recipauxset_E","SNo_recipauxset_ext","SNo_recipaux_0","SNo_recipaux_S","SNo_recipaux_lem1","SNo_recipaux_lem2","SNo_recipaux_ext","recip_SNo_pos_eq","recip_SNo_pos_prop1","SNo_recip_SNo_pos","recip_SNo_pos_invR","recip_SNo_pos_is_pos","recip_SNo_pos_invol","recip_SNo_pos_eps_","recip_SNo_pos_pow_2","recip_SNo_pos_2","recip_SNo_poscase","recip_SNo_negcase","recip_SNo_0","SNo_recip_SNo","recip_SNo_invR","recip_SNo_invL","mul_SNo_nonzero_cancel_L","recip_SNo_pow_2","recip_SNo_of_pos_is_pos","SNo_div_SNo","div_SNo_0_num","div_SNo_0_denum","mul_div_SNo_invL","mul_div_SNo_invR","mul_div_SNo_R","mul_div_SNo_L","div_mul_SNo_invL","div_div_SNo","mul_div_SNo_both","recip_SNo_pos_pos","div_SNo_pos_pos","div_SNo_neg_pos","div_SNo_pos_LtL","div_SNo_pos_LtR","div_SNo_pos_LtL'","div_SNo_pos_LtR'","mul_div_SNo_nonzero_eq","SNoS_omega_drat_intvl","SNoS_ordsucc_omega_bdd_above","SNoS_ordsucc_omega_bdd_below","SNoS_ordsucc_omega_bdd_drat_intvl","real_I","real_E","real_SNo","real_SNoS_omega_prop","SNoS_omega_real","real_0","real_1","SNoLev_In_real_SNoS_omega","real_SNoCut_SNoS_omega","real_SNoCut","minus_SNo_prereal_1","minus_SNo_prereal_2","SNo_prereal_incr_lower_pos","real_minus_SNo","SNo_prereal_incr_lower_approx","SNo_prereal_decr_upper_approx","SNoCutP_SNoCut_lim","SNoCutP_SNoCut_omega","SNo_approx_real_lem","SNo_approx_real","SNo_approx_real_rep","real_add_SNo","SNoS_ordsucc_omega_bdd_eps_pos","real_mul_SNo_pos","real_mul_SNo","nonneg_real_nat_interval","pos_real_left_approx_double","real_recip_SNo_lem1","real_recip_SNo_pos","real_recip_SNo","real_div_SNo","not_eq_2m_2n1","atleastp_SNoS_ordsucc_omega_Power_omega","equip_real_Power_omega","form100_22_real_uncountable_atleastp","form100_22_real_uncountable_equip","form100_22_real_uncountable","Subq_int_SNoS_omega","Subq_SNoS_omega_rational","Subq_rational_real","rational_minus_SNo","nat_pair_In_omega","nat_pair_0","nat_pair_1","form100_3","SNoL_nonneg_0","SNoL_nonneg_1","SNo_sqrtauxset_I","SNo_sqrtauxset_E","SNo_sqrtauxset_0","SNo_sqrtauxset_0'","SNo_sqrtaux_0","SNo_sqrtaux_S","SNo_sqrtaux_mon_lem","SNo_sqrtaux_mon","SNo_sqrtaux_ext","sqrt_SNo_nonneg_eq","sqrt_SNo_nonneg_prop1a","sqrt_SNo_nonneg_prop1b","sqrt_SNo_nonneg_prop1c","sqrt_SNo_nonneg_prop1d","sqrt_SNo_nonneg_prop1e","sqrt_SNo_nonneg_prop1","SNo_sqrtaux_0_1_prop","SNo_sqrtaux_0_prop","SNo_sqrtaux_1_prop","SNo_sqrt_SNo_SNoCutP","SNo_sqrt_SNo_nonneg","sqrt_SNo_nonneg_nonneg","sqrt_SNo_nonneg_sqr","sqrt_SNo_nonneg_0","sqrt_SNo_nonneg_1","sqrt_SNo_nonneg_0inL0","sqrt_SNo_nonneg_Lnonempty","sqrt_SNo_nonneg_Rnonempty","SNo_sqrtauxset_real","SNo_sqrtauxset_real_nonneg","sqrt_SNo_nonneg_SNoS_omega","sqrt_SNo_nonneg_real","divides_int_div_SNo_int","form100_1_lem1","form100_1_lem2","sqrt_2_irrational"],"cats":["prop_logic","prop_logic","prop_logic","prop_logic","prop_logic","prop_logic","prop_logic","prop_logic","prop_logic","prop_logic","prop_logic","prop_logic","prop_logic","prop_logic","prop_logic","prop_logic","prop_logic","prop_logic","prop_logic","prop_logic","prop_logic","prop_logic","prop_logic","prop_logic","prop_logic","prop_logic","prop_logic","prop_logic","prop_logic","prop_logic","prop_logic","prop_logic","prop_logic","prop_logic","prop_logic","prop_logic","prop_logic","prop_logic","prop_logic","set_theory","set_theory","set_theory","set_theory","set_theory","set_theory","set_theory","set_theory","set_theory","set_theory","set_theory","set_theory","set_theory","set_theory","set_theory","set_theory","set_theory","set_theory","set_theory","set_theory","set_theory","set_theory","set_theory","set_theory","set_theory","set_theory","set_theory","set_theory","set_theory","set_theory","set_theory","set_theory","set_theory","set_theory","set_theory","set_theory","set_theory","set_theory","set_theory","set_theory","set_theory","set_theory","set_theory","set_theory","set_theory","set_theory","set_theory","set_theory","set_theory","set_theory","set_theory","set_theory","set_theory","set_theory","set_theory","set_theory","set_theory","set_theory","set_theory","set_theory","set_theory","set_theory","set_theory","set_theory","set_theory","set_theory","set_theory","set_theory","set_theory","set_theory","set_theory","set_theory","set_theory","set_theory","set_theory","set_theory","set_theory","set_theory","set_theory","set_theory","set_theory","set_theory","set_theory","set_theory","set_theory","set_theory","set_theory","set_theory","set_theory","set_theory","set_theory","set_theory","set_theory","set_theory","set_theory","set_theory","set_theory","set_theory","set_theory","set_theory","set_theory","set_theory","set_theory","set_theory","set_theory","set_theory","set_theory","set_theory","set_theory","set_theory","set_theory","set_theory","set_theory","set_theory","set_theory","set_theory","set_theory","set_theory","set_theory","set_theory","set_theory","set_theory","set_theory","set_theory","set_theory","set_theory","set_theory","set_theory","set_theory","set_theory","set_theory","set_theory","set_theory","set_theory","set_theory","set_theory","set_theory","set_theory","set_theory","set_theory","set_theory","set_theory","set_theory","set_theory","set_theory","set_theory","set_theory","set_theory","set_theory","set_theory","set_theory","set_theory","set_theory","set_theory","set_theory","set_theory","set_theory","set_theory","set_theory","set_theory","set_theory","set_theory","set_theory","set_theory","set_theory","set_theory","set_theory","set_theory","set_theory","set_theory","set_theory","set_theory","set_theory","set_theory","set_theory","set_theory","set_theory","set_theory","set_theory","nat_arith","nat_arith","nat_arith","nat_arith","nat_arith","nat_arith","nat_arith","nat_arith","nat_arith","nat_arith","nat_arith","nat_arith","nat_arith","nat_arith","nat_arith","nat_arith","nat_arith","nat_arith","nat_arith","nat_arith","nat_arith","nat_arith","nat_arith","nat_arith","nat_arith","nat_arith","nat_arith","nat_arith","nat_arith","nat_arith","nat_arith","nat_arith","nat_arith","nat_arith","nat_arith","nat_arith","nat_arith","nat_arith","nat_arith","nat_arith","nat_arith","nat_arith","nat_arith","nat_arith","nat_arith","nat_arith","nat_arith","nat_arith","nat_arith","nat_arith","nat_arith","nat_arith","nat_arith","nat_arith","nat_arith","nat_arith","nat_arith","nat_arith","nat_arith","nat_arith","nat_arith","nat_arith","nat_arith","nat_arith","nat_arith","nat_arith","nat_arith","nat_arith","nat_arith","nat_arith","nat_arith","nat_arith","nat_arith","nat_arith","nat_arith","nat_arith","nat_arith","nat_arith","nat_arith","nat_arith","nat_arith","nat_arith","nat_arith","nat_arith","nat_arith","nat_arith","nat_arith","nat_arith","nat_arith","nat_arith","nat_arith","nat_arith","nat_arith","nat_arith","nat_arith","nat_arith","nat_arith","nat_arith","nat_arith","nat_arith","nat_arith","nat_arith","nat_arith","nat_arith","nat_arith","nat_arith","nat_arith","nat_arith","nat_arith","nat_arith","nat_arith","nat_arith","nat_arith","nat_arith","nat_arith","nat_arith","nat_arith","nat_arith","nat_arith","ordinals","ordinals","ordinals","ordinals","ordinals","ordinals","ordinals","ordinals","ordinals","ordinals","ordinals","ordinals","ordinals","ordinals","ordinals","ordinals","ordinals","ordinals","ordinals","ordinals","ordinals","ordinals","ordinals","ordinals","ordinals","ordinals","ordinals","ordinals","ordinals","ordinals","ordinals","ordinals","ordinals","ordinals","ordinals","ordinals","ordinals","ordinals","ordinals","ordinals","ordinals","ordinals","ordinals","ordinals","ordinals","ordinals","ordinals","ordinals","ordinals","ordinals","ordinals","ordinals","ordinals","ordinals","ordinals","ordinals","surreals","surreals","surreals","surreals","surreals","surreals","surreals","surreals","surreals","surreals","surreals","surreals","surreals","surreals","surreals","surreals","surreals","surreals","surreals","surreals","surreals","surreals","surreals","surreals","surreals","surreals","surreals","surreals","surreals","surreals","surreals","surreals","surreals","surreals","surreals","surreals","surreals","surreals","surreals","surreals","surreals","surreals","surreals","surreals","surreals","surreals","surreals","surreals","surreals","surreals","surreals","surreals","surreals","surreals","surreals","surreals","surreals","surreals","surreals","surreals","surreals","surreals","surreals","surreals","surreals","surreals","surreals","surreals","surreals","surreals","surreals","surreals","surreals","surreals","surreals","surreals","surreals","surreals","surreals","surreals","surreals","surreals","surreals","surreals","surreals","surreals","surreals","surreals","surreals","surreals","surreals","surreals","surreals","surreals","surreals","surreals","surreals","surreals","surreals","surreals","surreals","surreals","surreals","surreals","surreals","surreals","surreals","surreals","surreals","surreals","surreals","surreals","surreals","surreals","surreals","surreals","surreals","surreals","surreals","surreals","surreals","surreals","surreals","surreals","surreals","surreals","surreals","surreals","surreals","surreals","surreals","surreals","surreals","surreals","surreals","surreals","surreals","surreals","surreals","surreals","surreals","surreals","surreals","surreals","surreals","surreals","surreals","surreals","surreals","surreals","surreals","surreals","surreals","surreals","surreals","surreals","surreals","surreals","surreals","surreals","surreals","surreals","surreals","surreals","surreals","surreals","surreals","surreals","surreals","surreals","surreals","surreals","surreals","surreals","surreals","surreals","surreals","surreals","surreals","surreals","surreals","surreals","surreals","surreals","surreals","surreals","surreals","surreals","surreals","surreals","surreals","surreals","surreals","surreals","surreals","surreals","surreals","surreals","surreals","surreals","surreals","surreals","surreals","surreals","surreals","surreals","surreals","surreals","surreals","surreals","surreals","surreals","surreals","surreals","surreals","surreals","surreals","surreals","surreals","surreals","surreals","surreals","surreals","surreals","surreals","surreals","surreals","surreals","surreals","surreals","surreals","surreals","surreals","surreals","surreals","surreals","surreals","surreals","surreals","surreals","surreals","surreals","surreals","surreals","surreals","surreals","surreals","surreals","surreals","surreals","surreals","surreals","surreals","surreals","surreals","surreals","surreals","surreals","surreals","surreals","surreals","surreals","surreals","surreals","surreals","surreals","surreals","surreals","surreals","surreals","surreals","surreals","surreals","surreals","surreals","surreals","surreals","surreals","surreals","surreals","surreals","surreals","surreals","surreals","surreals","surreals","surreals","surreals","surreals","surreals","surreals","surreals","surreals","surreals","surreals","surreals","surreals","surreals","surreals","surreals","surreals","surreals","surreals","surreals","surreals","surreals","surreals","surreals","surreals","surreals","surreals","surreals","surreals","surreals","surreals","surreals","surreals","surreals","surreals","surreals","surreals","surreals","surreals","surreals","surreals","surreals","surreals","surreals","surreals","surreals","surreals","surreals","surreals","surreals","surreals","surreals","surreals","surreals","surreals","surreals","surreals","surreals","surreals","surreals","surreals","surreals","surreals","surreals","surreals","surreals","surreals","surreals","surreals","surreals","surreals","surreals","surreals","surreals","surreals","surreals","surreals","surreals","surreals","surreals","surreals","surreals","surreals","surreals","surreals","surreals","surreals","surreals","surreals","surreals","surreals","surreals","surreals","surreals","surreals","surreals","surreals","surreals","surreals","surreals","surreals","surreals","surreals","surreals","surreals","surreals","surreals","surreals","surreals","surreals","surreals","surreals","surreals","surreals","surreals","surreals","surreals","surreals","surreals","surreals","surreals","surreals","surreals","surreals","surreals","surreals","surreals","surreals","surreals","surreals","surreals","surreals","surreals","surreals","surreals","surreals","surreals","surreals","surreals","surreals","surreals","surreals","surreals","surreals","surreals","surreals","surreals","surreals","surreals","surreals","surreals","surreals","surreals","surreals","surreals","surreals","surreals","surreals","surreals","surreals","surreals","surreals","surreals","surreals","surreals","surreals","surreals","surreals","surreals","surreals","surreals","surreals","surreals","surreals","surreals","surreals","surreals","surreals","surreals","surreals","surreals","surreals","surreals","surreals","surreals","surreals","surreals","surreals","surreals","surreals","surreals","surreals","surreals","surreals","surreals","surreals","surreals","surreals","surreals","surreals","surreals","surreals","surreals","surreals","surreals","surreals","surreals","surreals","surreals","surreals","surreals","surreals","surreals","surreals","surreals","surreals","surreals","surreals","surreals","surreals","surreals","surreals","surreals","surreals","surreals","surreals","surreals","surreals","surreals","surreals","surreals","surreals","surreals","surreals","surreals","surreals","surreals","surreals","surreals","surreals","surreals","surreals","surreals","surreals","surreals","surreals","surreals","surreals","surreals","surreals","surreals","surreals","surreals","surreals","surreals","surreals","surreals","surreals","surreals","surreals","surreals","surreals","surreals","surreals","surreals","surreals","surreals","surreals","surreals","surreals","surreals","surreals","surreals","surreals","surreals","surreals","surreals","surreals","surreals","surreals","surreals","surreals","surreals","surreals","surreals","surreals","surreals","surreals","surreals","surreals","surreals","surreals","surreals","surreals","surreals","surreals","surreals","surreals","surreals","surreals","surreals","surreals","surreals","surreals","surreals","surreals","surreals","surreals","surreals","surreals","surreals","surreals","surreals","surreals","surreals","surreals","surreals","surreals","surreals","surreals","surreals","surreals"],"st":"111111111111111111111111111111211111111111111111111111111111111211111111111111121111111111122111111111111112111111111222221111111112211211112112012221111221211221211221211112221111111201211111111121222111111111211121121111111111111122212111020121111111122111111111111111111111111211122111111111111112112212112010211111211112222111111111111111111112111111111221111101111211112110202011112112210111111121111110201111111112211222221110002211122101001121202111111110121211011111111111121011112111111222111111011110121221112221111111111111110111211111122221210111122202201200210111222111121122122121120101112111112201111212111111021212200111211220111111111021111111111111111111121122222111111211111121111111200111001210120000101000211111111111221111111111121111110201011112111222221101122221221002211112200121112101112212112201111201111021121120211222022211001111000111222222110000001111111111111111111111110112222111002022110011001200002120000000001110000112012102010221111010202000001111111101020001020","order":["prop_logic","set_theory","nat_arith","ordinals","surreals"],"start":"form100_63_surjCantor"};
-const CAT={prop_logic:"Propositional logic",set_theory:"Set theory",nat_arith:"Natural-number arithmetic",ordinals:"Ordinals",surreals:"Surreal numbers"};
-const HOW={1:"Proved automatically, checked by Lean's kernel",2:"Proved by the LLM loop, checked by Lean's kernel",0:"Open: not yet proved"};
-const $=s=>document.querySelector(s);
-const groups=$("#groups"),read=$("#read"),cells=[];
-let filter="all",sel=null;
-D.order.forEach(cat=>{
-  const idx=D.names.map((_,i)=>i).filter(i=>D.cats[i]===cat);
-  const done=idx.filter(i=>D.st[i]!=="0").length;
-  const g=document.createElement("div");g.className="group";
-  const h=document.createElement("header");
-  h.innerHTML=`<span>${CAT[cat]||cat}</span><span>${done} / ${idx.length}</span>`;
-  const c=document.createElement("div");c.className="cells";
-  idx.forEach(i=>{const e=document.createElement("i");e.className="s"+D.st[i];e.dataset.i=i;c.append(e);cells[i]=e});
-  g.append(h,c);groups.append(g);
-});
-function show(i){
-  if(sel!==null)cells[sel].classList.remove("on");
-  sel=i;cells[i].classList.add("on");
-  read.innerHTML="";const b=document.createElement("b");b.textContent=D.names[i];
-  const s=document.createElement("span");s.textContent=(CAT[D.cats[i]]||D.cats[i])+". "+HOW[D.st[i]];
-  read.append(b,s);
-}
-groups.addEventListener("pointerover",e=>{if(e.target.dataset.i)show(+e.target.dataset.i)});
-groups.addEventListener("click",e=>{if(e.target.dataset.i)show(+e.target.dataset.i)});
-function apply(){cells.forEach((e,i)=>e.classList.toggle("dim",filter!=="all"&&D.st[i]!==filter))}
-document.querySelectorAll("[data-f]").forEach(b=>b.addEventListener("click",()=>{
-  filter=b.dataset.f;
-  document.querySelectorAll("[data-f]").forEach(x=>x.setAttribute("aria-pressed",x===b));
-  apply();
-}));
-const start=D.names.indexOf(D.start);show(start<0?0:start);
-let timer=null;
-$("#replay").addEventListener("click",()=>{
-  if(timer)return;
-  if(matchMedia("(prefers-reduced-motion:reduce)").matches)return;
-  const count=$("#count");let i=0,n=0;
-  cells.forEach(e=>e.classList.add("off"));
-  timer=setInterval(()=>{
-    for(let k=0;k<12&&i<cells.length;k++,i++){cells[i].classList.remove("off");if(D.st[i]!=="0")n++}
-    count.textContent=n;
-    if(i>=cells.length){clearInterval(timer);timer=null;count.textContent=877}
-  },30);
-});
-
-const V=[["v1",418,"Search, Vampire and Lean grind, no LLM"],["v2",514,"Learned search, distilled tactics, automatic induction"],["v3",563,"Vampire with a 128-fact slice, second-line Lean strategies"],["v4",640,"Duper, 256 and 512-fact slices, apply strategies"],["v4+",665,"Hybrid induction, 300 s Vampire, extras from older versions"],["v5",742,"LLM repairs: rescued cut-off replies, 5 rounds, few-shot examples"],["v6",755,"Real Lean errors as feedback, suggested lemma names"],["v7",832,"96 facts instead of 24"],["v8",859,"160 facts, 7 rounds (stopped after 85 of 167 goals)"],["v9",877,"Lemmas shown as Lean prints them, signatures for misapplied lemmas"]];
-const box=$("#chart"),tip=$("#tip"),NS="http://www.w3.org/2000/svg";
-function el(p,t,a,txt){const e=document.createElementNS(NS,t);for(const k in a)e.setAttribute(k,a[k]);if(txt!=null)e.textContent=txt;p.append(e);return e}
-function draw(){
-  const old=box.querySelector("svg");if(old)old.remove();
-  const W=Math.max(280,box.clientWidth),H=Math.min(320,W*.62),L=34,R=14,T=18,B=24;
-  const x=i=>L+(W-L-R)*i/(V.length-1),y=v=>T+(H-T-B)*(1-v/1000);
-  const s=el(box,"svg",{viewBox:`0 0 ${W} ${H}`,role:"img","aria-label":"Theorems proved rose from 418 at v1 to 877 at v9"});
-  [0,250,500,750,1000].forEach(v=>{
-    el(s,"line",{x1:L,x2:W-R,y1:y(v),y2:y(v),stroke:"var(--line)","stroke-width":1});
-    el(s,"text",{x:L-6,y:y(v)+4,"text-anchor":"end"},v);
-  });
-  el(s,"path",{d:V.map((d,i)=>(i?"L":"M")+x(i)+" "+y(d[1])).join(""),fill:"none",stroke:"var(--accent)","stroke-width":2,"stroke-linejoin":"round"});
-  V.forEach((d,i)=>{
-    if(W>=420||i%2===0||i===V.length-1)el(s,"text",{x:x(i),y:H-6,"text-anchor":"middle"},d[0]);
-    const dot=el(s,"circle",{cx:x(i),cy:y(d[1]),r:4.5,fill:"var(--accent)",stroke:"var(--bg)","stroke-width":2});
-    const hit=el(s,"rect",{x:x(i)-(W-L-R)/(V.length-1)/2,y:0,width:(W-L-R)/(V.length-1),height:H,fill:"transparent",tabindex:0,"aria-label":`${d[0]}: ${d[1]} proved. ${d[2]}`});
-    const on=()=>{tip.style.display="block";tip.innerHTML="";const b=document.createElement("b");b.textContent=`${d[0]}: ${d[1]} proved`;tip.append(b,d[2]);
-      const tw=tip.offsetWidth;tip.style.left=Math.max(0,Math.min(W-tw,x(i)-tw/2))+"px";tip.style.top=Math.max(0,y(d[1])+14)+"px";dot.setAttribute("r",6)};
-    const off=()=>{tip.style.display="none";dot.setAttribute("r",4.5)};
-    hit.addEventListener("pointerenter",on);hit.addEventListener("pointerleave",off);hit.addEventListener("focus",on);hit.addEventListener("blur",off);
-  });
-  [[0,418],[V.length-1,877]].forEach(([i,v])=>el(s,"text",{class:"val",x:x(i),y:y(v)+(i?-11:20),"text-anchor":i?"end":"start"},v));
-}
-draw();new ResizeObserver(()=>{if(Math.abs((box.querySelector("svg")?.viewBox.baseVal.width||0)-box.clientWidth)>1)draw()}).observe(box);
-
-const JOBS=[
-["AI Researcher and Developer","SingularityNET","Jan 2025 to present (remote)",2025,2026.83,"LLM and ITP-based theorem proving, autoformalization pipelines, and research on AGI cognitive architectures."],
-["Senior Data Scientist and Software Engineer","EthSwitch S.C.","Sep 2023 to Sep 2025",2023.67,2025.67,"Credit scoring models, scalable ETL pipelines and data infrastructure."],
-["Data Scientist and Engineer","Input Output Global","Apr 2019 to Nov 2024",2019.25,2024.83,"Blockchain analytics and prediction, R Shiny dashboards, dbt, Trino and BigQuery pipelines."],
-["SME in ML and AI","Excellerent Technology Solutions","Dec 2019 to Jan 2024",2019.92,2024,"Azure GPT medical assistant, NLP resume parser, Android ML asset tracker, analytics for COVID-19 and farming."],
-["Senior AI Researcher","Ethiopian Biotechnology Institute","Mar 2017 to Apr 2019",2017.17,2019.25,"CNN-based kidney abnormality detection, deep learning for healthcare and agriculture, AI training and robotics initiatives."],
-["AI Researcher and Developer","iCog Labs","Jun 2014 to Jan 2019",2014.42,2019,"Computer vision, sound recognition and perception for Sophia. OpenCog, AtomSpace and MOSES for intelligent robots."]];
-const pct=y=>(y-2014)/13*100;
-JOBS.forEach(j=>{
-  const r=document.createElement("article");r.className="row";
-  r.innerHTML=`<div><h3></h3><div class="meta"></div></div><div><div class="track" role="img"><u style="left:${pct(j[3])}%;width:${pct(j[4])-pct(j[3])}%"></u></div><p></p></div>`;
-  r.querySelector("h3").textContent=j[0];
-  r.querySelector(".meta").textContent=j[1]+", "+j[2];
-  r.querySelector(".track").setAttribute("aria-label",j[2]);
-  r.querySelector("p").textContent=j[5];
-  $("#axis").append(r);
-});
-
-$("#copy").addEventListener("click",async e=>{
-  const b=e.currentTarget;
-  try{await navigator.clipboard.writeText("yenatshif@gmail.com");b.textContent="Copied"}
-  catch{const r=document.createRange();r.selectNodeContents($("#addr"));const s=getSelection();s.removeAllRanges();s.addRange(r);b.textContent="Press Ctrl+C"}
-});
-</script>
 </body>
 </html>

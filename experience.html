@@ -1,0 +1,59 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Experience | Yenatfanta Shifferaw</title>
+<meta name="description" content="Yenatfanta Shifferaw, AI researcher, data scientist and data engineer.">
+<meta name="author" content="Yenatfanta Shifferaw Bayleyegn">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@400;500;600&family=STIX+Two+Text:ital,wght@0,400;0,600;1,400;1,500&display=swap">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<nav aria-label="Main"><div class="wrap">
+  <b><a href="index.html">Yenatfanta Shifferaw</a></b>
+  <ul><li><a href="index.html">Home</a></li><li><a href="about.html">About</a></li><li><a href="research.html">Research</a></li><li><a href="projects.html">Projects</a></li><li><a href="experience.html" aria-current="page">Experience</a></li><li><a href="publications.html">Publications</a></li><li><a class="res" href="Yenatfanta-Shifferaw-Resume.pdf">Resume</a></li></ul>
+</div></nav>
+<main>
+<div class="page"><div class="wrap">
+  <div class="head">
+    <span class="label">Career, 2014 to today</span>
+    <h1>From robots to proofs.</h1>
+  </div>
+  <div class="years" aria-hidden="true"><span style="left:0">2014</span><span style="left:30.77%">2018</span><span style="left:61.54%">2022</span><span style="left:92.31%">2026</span></div>
+  <div class="axis" id="axis"></div>
+</div></div>
+</main>
+<footer class="foot"><div class="wrap">
+  <span>yenatshif@gmail.com</span>
+  <ul>
+    <li><a href="http://www.linkedin.com/in/yenatfanta-shifferaw-64b0614b">LinkedIn</a></li>
+    <li><a href="https://github.com/yenat">GitHub</a></li>
+    <li><a href="https://scholar.google.com/citations?hl=en&amp;user=lGdEZHIAAAAJ">Google Scholar</a></li>
+  </ul>
+</div></footer>
+<script>
+const $=s=>document.querySelector(s);
+const JOBS=[
+["AI Researcher and Developer","SingularityNET","Jan 2025 to present (remote)",2025,2026.83,"LLM and ITP-based theorem proving, autoformalization pipelines, and research on AGI cognitive architectures."],
+["Senior Data Scientist and Software Engineer","EthSwitch S.C.","Sep 2023 to Sep 2025",2023.67,2025.67,"Credit scoring models, scalable ETL pipelines and data infrastructure."],
+["Data Scientist and Engineer","Input Output Global","Apr 2019 to Nov 2024",2019.25,2024.83,"Blockchain analytics and prediction, R Shiny dashboards, dbt, Trino and BigQuery pipelines."],
+["SME in ML and AI","Excellerent Technology Solutions","Dec 2019 to Jan 2024",2019.92,2024,"Azure GPT medical assistant, NLP resume parser, Android ML asset tracker, analytics for COVID-19 and farming."],
+["Senior AI Researcher","Ethiopian Biotechnology Institute","Mar 2017 to Apr 2019",2017.17,2019.25,"CNN-based kidney abnormality detection, deep learning for healthcare and agriculture, AI training and robotics initiatives."],
+["AI Researcher and Developer","iCog Labs","Jun 2014 to Jan 2019",2014.42,2019,"Computer vision, sound recognition and perception for Sophia. OpenCog, AtomSpace and MOSES for intelligent robots."]];
+const pct=y=>(y-2014)/13*100;
+JOBS.forEach(j=>{
+  const r=document.createElement("article");r.className="row";
+  r.innerHTML=`<div><h3></h3><div class="meta"></div></div><div><div class="track" role="img"><u style="left:${pct(j[3])}%;width:${pct(j[4])-pct(j[3])}%"></u></div><p></p></div>`;
+  r.querySelector("h3").textContent=j[0];
+  r.querySelector(".meta").textContent=j[1]+", "+j[2];
+  r.querySelector(".track").setAttribute("aria-label",j[2]);
+  r.querySelector("p").textContent=j[5];
+  $("#axis").append(r);
+});
+
+</script>
+</body>
+</html>
