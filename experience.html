@@ -19,10 +19,10 @@
 <main>
 <div class="page"><div class="wrap">
   <div class="head">
-    <span class="label">Career, 2014 to today</span>
-    <h1>From robots to AGI.</h1>
+    <span class="label">Career, 2007 to today</span>
+    <h1>From telecom networks to AGI.</h1>
   </div>
-  <div class="years" aria-hidden="true"><span style="left:0">2014</span><span style="left:30.77%">2018</span><span style="left:61.54%">2022</span><span style="left:92.31%">2026</span></div>
+  <div class="years" aria-hidden="true"><span style="left:0">2007</span><span style="left:25%">2012</span><span style="left:50%">2017</span><span style="left:75%">2022</span></div>
   <div class="axis" id="axis"></div>
 </div></div>
 </main>
@@ -37,20 +37,22 @@
 <script>
 const $=s=>document.querySelector(s);
 const JOBS=[
-["AI Researcher and Developer","SingularityNET","Jan 2025 to present (remote)",2025,2026.83,"AGI research: cognitive architectures, LLM and ITP-based theorem proving, and autoformalization pipelines."],
-["Senior Data Scientist and Software Engineer","EthSwitch S.C.","Sep 2023 to Sep 2025",2023.67,2025.67,"Credit scoring models, scalable ETL pipelines and data infrastructure."],
-["Data Scientist and Engineer","Input Output Global","Apr 2019 to Nov 2024",2019.25,2024.83,"Blockchain analytics and prediction, R Shiny dashboards, dbt, Trino and BigQuery pipelines."],
-["SME in ML and AI","Excellerent Technology Solutions","Dec 2019 to Jan 2024",2019.92,2024,"Azure GPT medical assistant, NLP resume parser, Android ML asset tracker, analytics for COVID-19 and farming."],
-["Senior AI Researcher","Ethiopian Biotechnology Institute","Mar 2017 to Apr 2019",2017.17,2019.25,"CNN-based kidney abnormality detection, deep learning for healthcare and agriculture, AI training and robotics initiatives."],
-["AI Researcher and Developer","iCog Labs","Jun 2014 to Jan 2019",2014.42,2019,"Computer vision, sound recognition and perception for Sophia. Applied the OpenCog AGI framework, AtomSpace and MOSES to intelligent robots."]];
-const pct=y=>(y-2014)/13*100;
+["AI Researcher and Developer","SingularityNET","Jan 2025 to present (remote)",2025,2026.83,["AGI research on cognitive architectures, integrating NLP models into AI pipelines","LLM and ITP-based automated theorem proving and formal verification","Autoformalization pipelines that turn mathematical literature into formal proofs"]],
+["Senior Data Scientist and Software Engineer","EthSwitch S.C.","Sep 2023 to Sep 2025",2023.67,2025.67,["Deployed ML credit scoring on financial, social media and psychometric data","Engineered scalable ETL pipelines and data infrastructure","Adapted AI solutions to regulatory and privacy requirements"]],
+["Data Scientist and Engineer","Input Output Global","Apr 2019 to Nov 2024",2019.25,2024.83,["Blockchain analytics and prediction with AWS SageMaker and QuickSight","R Shiny dashboards integrating machine learning models","Optimized dbt, Trino and BigQuery pipelines, monitored with Prometheus and Grafana"]],
+["SME in ML and AI","Excellerent Technology Solutions","Dec 2019 to Jan 2024",2019.92,2024,["Built an Azure GPT-based medical assistant","Developed an NLP resume parser and an Android ML asset tracker","Delivered analytics for COVID-19 and farming"]],
+["Senior AI Researcher","Ethiopian Biotechnology Institute","Mar 2017 to Apr 2019",2017.17,2019.25,["Developed CNN-based kidney abnormality detection","Built deep learning solutions for healthcare and agriculture","Led AI training sessions and robotics initiatives"]],
+["AI Researcher and Developer","iCog Labs","Jun 2014 to Jan 2019",2014.42,2019,["Built computer vision, sound recognition and real-time perception for Sophia","Applied the OpenCog AGI framework, AtomSpace and MOSES to intelligent robots"]],
+["Senior Engineer","ZTE ICT Technology","Sep 2011 to Oct 2013",2011.67,2013.75,["Supported and optimized Ethio Telecom's Customer Care and Billing database, protecting sensitive data","Crafted query definitions for efficient data extraction and stakeholder reporting","Evaluated the IT infrastructure of Ethiopia's justice system and analyzed its current and future networks"]],
+["Junior Electrical Engineer","Ethio Telecom","Sep 2007 to Feb 2009",2007.67,2009.08,["Supported site surveys and equipment installation for the Fixed Line Next Generation Network","Helped upgrade and expand broadband services in the Internet Service Division","Gave customers technical support for high-speed internet"]]];
+const pct=y=>(y-2007)/20*100;
 JOBS.forEach(j=>{
   const r=document.createElement("article");r.className="row";
-  r.innerHTML=`<div><h3></h3><div class="meta"></div></div><div><div class="track" role="img"><u style="left:${pct(j[3])}%;width:${pct(j[4])-pct(j[3])}%"></u></div><p></p></div>`;
+  r.innerHTML=`<div><h3></h3><div class="meta"></div></div><div><div class="track" role="img"><u style="left:${pct(j[3])}%;width:${pct(j[4])-pct(j[3])}%"></u></div><ul></ul></div>`;
   r.querySelector("h3").textContent=j[0];
   r.querySelector(".meta").textContent=j[1]+", "+j[2];
   r.querySelector(".track").setAttribute("aria-label",j[2]);
-  r.querySelector("p").textContent=j[5];
+  j[5].forEach(x=>{const l=document.createElement("li");l.textContent=x;r.querySelector("ul").append(l)});
   $("#axis").append(r);
 });
 
