@@ -167,7 +167,7 @@ main{min-height:62vh}
 .tiles p{margin:3px 0 0;font-size:.93rem;color:var(--muted)}
 .tiles .yr{font:400 .76rem var(--mono);color:var(--muted);display:block;margin-bottom:3px}
 .tags{display:flex;flex-wrap:wrap;gap:7px;list-style:none;margin:10px 0 0;padding:0}
-.tags li{font:400 .78rem var(--mono);padding:4px 9px;background:var(--panel)}
+.tags li{font:600 .88rem var(--body);padding:5px 11px;background:var(--panel)}
 .pubs{list-style:none;margin:0;padding:0}
 .pubs li{padding-block:16px;border-top:1px solid var(--line)}
 .pubs a{font:400 1.25rem/1.3 var(--display);text-decoration:none}
